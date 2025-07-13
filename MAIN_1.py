@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+import os
 import tkinter as tk
 from tkinter import ttk, messagebox
 import requests
@@ -16,8 +18,9 @@ class ModernWeatherApp:
         
         # Variables
         self.weather_icon_photo = None # To hold the PhotoImage object
-        self.api_key = "38580d3697cf0d37b4745f1a4f297fb0" # Your OpenWeatherMap API Key
-        self.csv_file_path = r"D:\My Files\weather_data.csv" # Path for the CSV file
+        load_dotenv()
+        self.api_key = os.getenv("API_KEY")
+        self.csv_file_path = os.getenv("CSV_FILE_PATH")
         
     def setup_window(self):
         """Setup main window"""
