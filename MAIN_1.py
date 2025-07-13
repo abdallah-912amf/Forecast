@@ -401,3 +401,4 @@ class ModernWeatherApp:
 if __name__ == "__main__":
     app = ModernWeatherApp()
     app.run()
+#TEST
